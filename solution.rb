@@ -14,6 +14,17 @@ require 'sinatra'
 # end
  ###################reto 4
  
+# get '/' do
+#    erb :index
+# end
+
+####################reto 5
+
 get '/' do
-   erb :index
+    @arreglo = []
+    50.times do |num| 
+        @arreglo[num] = num + 1  
+    end
+
+    erb :index
 end
