@@ -1,7 +1,14 @@
 require 'sinatra'
 
-get '/makers/:nombre' do
+get '/' do
     <<-HTML
-        <h1>"Hola #{params['nombre'].capitalize}!"</h1>
+        <form action="/views/saludo" method="post">
+            <input type="text" name="nombre" id="nombre">
+            <button type="submit">Hola</button>
+        </form>
     HTML
+end
+
+post '/views/saludo' do
+    "Hola #{params[:nombre]}"
 end
